@@ -15,8 +15,9 @@ for x in range(7):
    # create the buttons 
         button_dict[x] = Button(window, text = '', width=5, height=2, bg="white")
         button_dict[x].place(x=150*x, y=120*y)
-        
 
+        
+d = 10
 def run():
     window.mainloop()
 
