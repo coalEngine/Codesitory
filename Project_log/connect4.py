@@ -14,6 +14,7 @@ frame.pack(side=BOTTOM)
 # Game_Board Config
 player_1_token = ""
 player_2_token = ""
+e = " "
 board = [
     [],
     [],
@@ -31,6 +32,8 @@ main_text = Label(
     fg="White"
     )
 
+def drop_down():
+    pass
 
 # create buttons
 button_dict = {}
@@ -50,7 +53,6 @@ for y_pos in range(7):
         )
         button_dict[y_pos].grid(row=x_pos, column=y_pos)
         
-
         
 def run():
     main_text.pack()
