@@ -1,6 +1,5 @@
 from tkinter import *
 import tkinter as tk
-import numpy as np
 
 # Window Config
 window = Tk()
@@ -74,20 +73,15 @@ def run():
     player_select.place(x=0, y=0)
     window.mainloop()
 
-def create_virtual_board():
-    board = np.zeros((6,7))
-    return board
 
 board_data = [
-                [frame.children["!button"], frame.children["!button2"], frame.children["!button3"], frame.children["!button4"], frame.children["!button5"], frame.children["!button6"], frame.children["!button7"]],
-                [frame.children["!button8"], frame.children["!button9"], frame.children["!button10"], frame.children["!button11"], frame.children["!button12"], frame.children["!button13"], frame.children["!button14"]],
-                [frame.children["!button15"], frame.children["!button16"], frame.children["!button17"], frame.children["!button18"], frame.children["!button19"], frame.children["!button20"], frame.children["!button21"]],
-                [frame.children["!button22"], frame.children["!button23"], frame.children["!button24"], frame.children["!button25"], frame.children["!button26"], frame.children["!button27"], frame.children["!button28"]],
-                [frame.children["!button29"], frame.children["!button30"], frame.children["!button31"], frame.children["!button32"], frame.children["!button33"], frame.children["!button34"], frame.children["!button35"]],
-                [frame.children["!button36"], frame.children["!button37"], frame.children["!button38"], frame.children["!button39"], frame.children["!button40"], frame.children["!button41"], frame.children["!button42"]]
-            ]
-board = create_virtual_board()
-print(board)    
+[frame.children["!button"], frame.children["!button2"], frame.children["!button3"], frame.children["!button4"], frame.children["!button5"], frame.children["!button6"], frame.children["!button7"]],
+[frame.children["!button8"], frame.children["!button9"], frame.children["!button10"], frame.children["!button11"], frame.children["!button12"], frame.children["!button13"], frame.children["!button14"]],
+[frame.children["!button15"], frame.children["!button16"], frame.children["!button17"], frame.children["!button18"], frame.children["!button19"], frame.children["!button20"], frame.children["!button21"]],
+[frame.children["!button22"], frame.children["!button23"], frame.children["!button24"], frame.children["!button25"], frame.children["!button26"], frame.children["!button27"], frame.children["!button28"]],
+[frame.children["!button29"], frame.children["!button30"], frame.children["!button31"], frame.children["!button32"], frame.children["!button33"], frame.children["!button34"], frame.children["!button35"]],
+ [frame.children["!button36"], frame.children["!button37"], frame.children["!button38"], frame.children["!button39"], frame.children["!button40"], frame.children["!button41"], frame.children["!button42"]]
+]
 
 while not game_over:
     run()
