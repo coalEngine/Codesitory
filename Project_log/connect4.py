@@ -1,5 +1,6 @@
 from tkinter import *
 import tkinter as tk
+import numpy as np
 
 # Window Config
 window = Tk()
@@ -16,6 +17,14 @@ player_1_token = ""
 player_2_token = ""
 e = " "
 
+<<<<<<< HEAD
+=======
+# Settings
+game_over = False
+turn = 0
+text="player_1_turn"
+
+>>>>>>> e670de29e3bfae8d909fca02259e46d8999e4106
 
 # Main Text Config
 main_text = Label(
@@ -36,16 +45,31 @@ player_select = Label(
 def drop_down():
     pass
 
+<<<<<<< HEAD
 
 
     
 
+=======
+text = Entry(window, width=30, bg='Black', fg="White")
+text.place(x=0, y=0)
+
+def text_updation():
+     text.delete(0, END)
+     if turn == 0: 
+        text.insert(0, "player_1_turn")
+     
+  
+
+
+>>>>>>> e670de29e3bfae8d909fca02259e46d8999e4106
 # create buttons
 
 button_dict = {}
 
 for y_pos in range(7):
     for x_pos in range(6):
+<<<<<<< HEAD
         def change_player():
             board = [
                         [frame.children["!button"], frame.children["!button2"], frame.children["!button3"], frame.children["!button4"], frame.children["!button5"], frame.children["!button6"], frame.children["!button7"]],
@@ -60,14 +84,25 @@ for y_pos in range(7):
             p2 = True
 
 
+=======
+   
+        def action(): 
+            return text_updation()  
+      
+     # create the buttons 
+>>>>>>> e670de29e3bfae8d909fca02259e46d8999e4106
         button_dict[y_pos] = Button(
             frame, 
             text = '', 
             width=16, 
             height=7, 
             bg="Black",
+<<<<<<< HEAD
             command = change_player,
             fg="Light Blue",
+=======
+            command= action
+>>>>>>> e670de29e3bfae8d909fca02259e46d8999e4106
         )
         button_dict[y_pos].grid(row=x_pos, column=y_pos)
         
@@ -76,10 +111,23 @@ def run():
     main_text.pack()
     player_select.place(x=0, y=0)
     window.mainloop()
+<<<<<<< HEAD
     
 
 game_end = False
 while not game_end:
+=======
+
+def create_virtual_board():
+    board = np.zeros((6,7))
+    return board
+
+
+board = create_virtual_board()
+print(board)    
+
+while not game_over:
+>>>>>>> e670de29e3bfae8d909fca02259e46d8999e4106
     run()
 
             
