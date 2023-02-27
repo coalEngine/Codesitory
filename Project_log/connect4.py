@@ -15,14 +15,7 @@ frame.pack(side=BOTTOM)
 player_1_token = ""
 player_2_token = ""
 e = " "
-board = [
-    [],
-    [],
-    [],
-    [],
-    [],
-    []
-]
+
 
 # Main Text Config
 main_text = Label(
@@ -32,34 +25,62 @@ main_text = Label(
     fg="White"
     )
 
+selected = "Player_1_Turn"
+
+player_select = Label(
+    fg="White",
+    bg="Black",
+    text= selected
+)
+
 def drop_down():
     pass
 
+
+
+    
+
 # create buttons
+
 button_dict = {}
+
 for y_pos in range(7):
     for x_pos in range(6):
-   #
-   # def action(x = x): 
-   #    return text_updation(x)   
-   # create the buttons 
+        def change_player():
+            board = [
+                        [frame.children["!button"], frame.children["!button2"], frame.children["!button3"], frame.children["!button4"], frame.children["!button5"], frame.children["!button6"], frame.children["!button7"]],
+                        [frame.children["!button8"], frame.children["!button9"], frame.children["!button10"], frame.children["!button11"], frame.children["!button12"], frame.children["!button13"], frame.children["!button14"]],
+                        [frame.children["!button15"], frame.children["!button16"], frame.children["!button17"], frame.children["!button18"], frame.children["!button19"], frame.children["!button20"], frame.children["!button21"]],
+                        [frame.children["!button22"], frame.children["!button23"], frame.children["!button24"], frame.children["!button25"], frame.children["!button26"], frame.children["!button27"], frame.children["!button28"]],
+                        [frame.children["!button29"], frame.children["!button30"], frame.children["!button31"], frame.children["!button32"], frame.children["!button33"], frame.children["!button34"], frame.children["!button35"]],
+                        [frame.children["!button36"], frame.children["!button37"], frame.children["!button38"], frame.children["!button39"], frame.children["!button40"], frame.children["!button41"], frame.children["!button42"]]
+                    ]
+            board[4][4].config(text="*")
+            player_select.config(text="Player_2_Turn")
+            p2 = True
+
+
         button_dict[y_pos] = Button(
             frame, 
             text = '', 
             width=16, 
             height=7, 
             bg="Black",
-         
+            command = change_player,
+            fg="Light Blue",
         )
         button_dict[y_pos].grid(row=x_pos, column=y_pos)
         
         
 def run():
     main_text.pack()
+    player_select.place(x=0, y=0)
     window.mainloop()
     
-    
-run()
+
+game_end = False
+while not game_end:
+    run()
 
             
        
