@@ -11,14 +11,8 @@ window.config(bg="black")
 frame = Frame(window, bg="White")
 frame.pack(side=BOTTOM)
 
-# Game_Board Config
-player_1_token = ""
-player_2_token = ""
-e = " "
-
 # Settings
 game_over = False
-turn = 0
 text="player_1_turn"
 
 
@@ -41,21 +35,20 @@ player_select = Label(
 def drop_down():
     pass
 
-
-
-  
-
 # create buttons
 
 button_dict = {}
 
 for y_pos in range(7):
     for x_pos in range(6):
-        def change_player(obj, check, button):
+        def change_player(obj, button):
             player_select.config(text="Player_2_Turn")
             p2 = True
-            if check == True:
-                button.config(text=obj)
+            theButton = ""
+            for key in button:
+                theButton = key
+            button[theButton].config(text=obj)
+        
      # create the buttons 
         button_dict[y_pos] = Button(
             frame, 
@@ -64,7 +57,7 @@ for y_pos in range(7):
             height=7, 
             bg="Black",
             command = lambda
-            text = "*", clicked = True : change_player(text, clicked, frame.children),
+            text = "*", : change_player(text, frame.children),
             fg="Light Blue",
         )
         button_dict[y_pos].grid(row=x_pos, column=y_pos)
