@@ -13,8 +13,6 @@ frame.pack(side=BOTTOM)
 
 # Settings
 game_over = False
-text="player_1_turn"
-
 
 # Main Text Config
 main_text = Label(
@@ -25,7 +23,6 @@ main_text = Label(
     )
 
 selected = "Player_1_Turn"
-
 player_select = Label(
     fg="White",
     bg="Black",
