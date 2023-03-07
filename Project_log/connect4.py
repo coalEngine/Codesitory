@@ -35,16 +35,14 @@ def drop_down():
 # create buttons
 
 button_dict = {}
+buttonClicked = False
 
 for y_pos in range(7):
     for x_pos in range(6):
-        def change_player(obj, button):
-            player_select.config(text="Player_2_Turn")
+        def change_player(button_id):
             p2 = True
-            theButton = ""
-            for key in button:
-                theButton = key
-            button[theButton].config(text=obj)
+            player_select.config(text="Player_2_Turn")
+            button_dict[button_id].config(text='x')
         
      # create the buttons 
         button_dict[y_pos] = Button(
@@ -53,8 +51,7 @@ for y_pos in range(7):
             width=16, 
             height=7, 
             bg="Black",
-            command = lambda
-            text = "*", : change_player(text, frame.children),
+            command = lambda button_id=y_pos: change_player(button_id),
             fg="Light Blue",
         )
         button_dict[y_pos].grid(row=x_pos, column=y_pos)
