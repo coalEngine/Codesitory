@@ -11,6 +11,9 @@ buttons_dict = {}
 ###########################################
 def fire_here(x, y):
     print("column:{}, row:{}".format(x, y))
+    value = '{}_{}'.format(x, y)
+    print(value)
+
 ###########################################
 
 for r in range(7):
@@ -19,8 +22,9 @@ for r in range(7):
         COORDS_LIST.append(coord)
         buttons_dict[COORDS_LIST[-1]] = ttk.Button(board_frame, text="O", width="2")
         ###########################################################################
-        buttons_dict[COORDS_LIST[-1]]["command"] = lambda x=c, y=r: fire_here(x, y)
+        buttons_dict[COORDS_LIST[-1]]["command"] = lambda x=c, y=r : fire_here(x, y)
         ###########################################################################
         buttons_dict[COORDS_LIST[-1]].grid(row=r,column=c)
 
+print(COORDS_LIST)
 root.mainloop()
