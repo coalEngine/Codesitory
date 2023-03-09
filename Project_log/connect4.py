@@ -9,6 +9,7 @@ window.config(bg="black")
 
 # Frame Config
 frame = Frame(window, bg="White")
+frame.grid(column=0,row=0)
 frame.pack(side=BOTTOM)
 
 # Settings
@@ -28,6 +29,11 @@ player_select = Label(
     bg="Black",
     text= selected
 )
+catch_player = Label(
+    fg="White",
+    bg="Black",
+    text=""
+)
 
 def drop_down():
     pass
@@ -37,12 +43,31 @@ def drop_down():
 COORDS_LIST = []
 buttons_dict = {}
 
-###########################################
-def fire_off(x, y):
-    print("column:{}, row:{}".format(x, y))
-    newValue = 0
-    value = '{}_{}'.format(x, y)
 
+###########################################
+def select_move(x, y):
+    print("column:{}, row:{}".format(x, y))
+    value = '{}_{}'.format(y, x)
+    COORDS_LIST.sort()
+    if value in COORDS_LIST:
+        if player_select.cget("text") == "Player_1_Turn":
+            if buttons_dict[value].cget("fg") == "Red":
+                catch_player.config(text="(P1): You cannot move here")
+            elif buttons_dict[value].cget("fg") == "Blue":
+                catch_player.config(text="(P1): You've already moved here")
+            else:
+                buttons_dict[value].config(text="O", fg="Blue")
+                player_select.config(text="Player_2_Turn")
+                catch_player.config(text="")
+        elif player_select.cget("text") == "Player_2_Turn":
+            if buttons_dict[value].cget("fg") ==  "Blue":
+                catch_player.config(text="(P2): You cannot move here")
+            elif buttons_dict[value].cget("fg") == "Red":
+                catch_player.config(text="(P2): You've already moved here")
+            else:
+                buttons_dict[value].config(text="O", fg="Red")
+                player_select.config(text="Player_1_Turn")
+                catch_player.config(text="")
 ###########################################
 
 for r in range(6):
@@ -51,15 +76,15 @@ for r in range(6):
         COORDS_LIST.append(coord)
         buttons_dict[COORDS_LIST[-1]] = Button(frame, text="O", width="16", height="7", bg="Black", fg="White")
         ###########################################################################
-        buttons_dict[COORDS_LIST[-1]]["command"] = lambda x=c, y=r : fire_off(x, y)
+        buttons_dict[COORDS_LIST[-1]]["command"] = lambda x=c, y=r : select_move(x, y)
         ###########################################################################
         buttons_dict[COORDS_LIST[-1]].grid(row=r,column=c)
 
-print(COORDS_LIST)
-        
+
 def run():
     main_text.place(x=536, y=0)
     player_select.place(x=0, y=0)
+    catch_player.place(x=0, y=20)
     window.mainloop()
 
 
