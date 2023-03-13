@@ -35,14 +35,16 @@ catch_player = Label(
     text=""
 )
 
-def drop_down():
-    pass
 
 # create buttons
 
 COORDS_LIST = []
 buttons_dict = {}
 
+
+###########################################
+def drop_down():
+    pass
 
 ###########################################
 def select_move(x, y):
@@ -69,6 +71,9 @@ def select_move(x, y):
                 player_select.config(text="Player_1_Turn")
                 catch_player.config(text="")
 ###########################################
+
+
+
 
 for r in range(6):
     for c in range(7):
