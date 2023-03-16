@@ -43,10 +43,6 @@ buttons_dict = {}
 
 
 ###########################################
-def drop_down():
-    pass
-
-###########################################
 def select_move(x, y):
     print("column:{}, row:{}".format(x, y))
     value = '{}_{}'.format(y, x)
