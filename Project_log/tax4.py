@@ -29,6 +29,7 @@ regularSaleP = (cost * quantity1) + (cost2 * quantity2) + (cost3 * quantity3) + 
 md = round(regularSaleP * Mdr, 2)
 sale = round(regularSaleP - md,2)
 tax = sale * taxR
+tax = round(tax)
 tpp = round(sale + tax, 2)
 
 print()
