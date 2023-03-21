@@ -47,6 +47,8 @@ def select_move(x, y):
     print("column:{}, row:{}".format(x, y))
     value = '{}_{}'.format(y, x)
     COORDS_LIST.sort()
+    newLow = 5
+    value = '{}_{}'.format(5, x)
     if value in COORDS_LIST:
         if player_select.cget("text") == "Player_1_Turn":
             if buttons_dict[value].cget("fg") == "Red":
