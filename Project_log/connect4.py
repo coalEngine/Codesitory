@@ -42,16 +42,24 @@ COORDS_LIST = []
 buttons_dict = {}
 
 
+<<<<<<< HEAD
 
 
 ###########################################
 
+=======
+###########################################
+>>>>>>> 8c1b5d1e365d95e288150ecf326ca5f759ae7ca1
 def select_move(x, y):
     print("column:{}, row:{}".format(x, y))
     value = '{}_{}'.format(y, x)
     COORDS_LIST.sort()
     newLow = 5
+<<<<<<< HEAD
     value = '{}_{}'.format(newLow, x)
+=======
+    value = '{}_{}'.format(5, x)
+>>>>>>> 8c1b5d1e365d95e288150ecf326ca5f759ae7ca1
     if value in COORDS_LIST:
         if player_select.cget("text") == "Player_1_Turn":
             if buttons_dict[value].cget("fg") == "Red":
