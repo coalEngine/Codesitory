@@ -1,6 +1,6 @@
 a = input("Enter a number: ")
 b = input("Enter another number: ")
-
+print("")
 sum = a + b
 print("Data Type sum :", sum, type(sum))
 sum = int(a) + int(b)
