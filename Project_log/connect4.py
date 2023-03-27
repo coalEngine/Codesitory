@@ -1,104 +1,72 @@
-from tkinter import *
-import tkinter as tk
+import numpy as np
 
-# Window Config
-window = Tk()
-window.title("Connect 4 (v1.0)")
-window.geometry("1200x800")
-window.config(bg="black")
 
-# Frame Config
-frame = Frame(window, bg="White")
-frame.grid(column=0,row=0)
-frame.pack(side=BOTTOM)
+ROWS, COLS = 6, 7
 
-# Settings
+def make_board():
+    board = np.zeros((ROWS,COLS))
+    return board
+
+def drop_piece(board, row, col, piece):
+    board[row][col] = piece
+
+def iVL(board, col):
+    return board[ROWS-1][col] == 0
+
+def gEX(board, col):
+    for r in range(ROWS):
+        if board[r][col] == 0:
+            return r
+        
+def printB(board):
+    print(np.flip(board, 0))
+
+def wM(board, piece):
+    # Check Horizontals
+    for c in range(COLS-3):
+        for r in range(ROWS):
+            if board[r][c] == piece and board[r][c+1] == piece and board[r][c+2] == piece and board[r][c+3] == piece:
+                return True
+    # Check Verticals
+    for c in range(COLS):
+        for r in range(ROWS-3):
+            if board[r][c] == piece and board[r+1][c] == piece and board[r+2][c] == piece and board[r+3][c] == piece:
+                return True
+    # Check Positive Diags
+    for c in range(COLS-3):
+        for r in range(ROWS -3):
+             if board[r][c] == piece and board[r+1][c+1] == piece and board[r+2][c+2] == piece and board[r+3][c+3] == piece:
+                return True
+    # Check Negative Diags
+    for c in range(COLS-3):
+        for r in range(3, ROWS):
+             if board[r][c] == piece and board[r-1][c+1] == piece and board[r-2][c+2] == piece and board[r-3][c+3] == piece:
+                return True
+board = make_board()
 game_over = False
-
-# Main Text Config
-main_text = Label(
-    text="Connect 4",
-    font = ('Times 24 italic'),
-    bg="Black",
-    fg="White"
-    )
-
-selected = "Player_1_Turn"
-player_select = Label(
-    fg="White",
-    bg="Black",
-    text= selected
-)
-catch_player = Label(
-    fg="White",
-    bg="Black",
-    text=""
-)
-
-
-# create buttons
-
-COORDS_LIST = []
-buttons_dict = {}
-
-
-
-
-###########################################
-
-def select_move(x, y):
-    print("column:{}, row:{}".format(x, y))
-    value = '{}_{}'.format(y, x)
-    COORDS_LIST.sort()
-    up = 1
-    upperVal = '{}_{}'.format(y - up, x)
-    # newLow = int(max(COORDS_LIST).split("_")[0])
-
-     
-    if value in COORDS_LIST:
-        if player_select.cget("text") == "Player_1_Turn":
-            if buttons_dict[value].cget("fg") == "Red":
-                catch_player.config(text="(P1): You cannot move here")
-            elif buttons_dict[value].cget("fg") == "Blue":
-                catch_player.config(text="(P1): You've already moved here")
-            else:
-                buttons_dict[value].config(text="O", fg="Blue")
-                player_select.config(text="Player_2_Turn")
-                catch_player.config(text="")
-        elif player_select.cget("text") == "Player_2_Turn":
-            if buttons_dict[value].cget("fg") ==  "Blue":
-                catch_player.config(text="(P2): You cannot move here")
-            elif buttons_dict[value].cget("fg") == "Red":
-                catch_player.config(text="(P2): You've already moved here")
-            else:
-                buttons_dict[value].config(text="O", fg="Red")
-                player_select.config(text="Player_1_Turn")
-                catch_player.config(text="")
-###########################################
-
-
-
-
-for r in range(6):
-    for c in range(7):
-        coord = str(r)+"_"+str(c)
-        COORDS_LIST.append(coord)
-        buttons_dict[COORDS_LIST[-1]] = Button(frame, text="O", width="16", height="7", bg="Black", fg="White")
-        ###########################################################################
-        buttons_dict[COORDS_LIST[-1]]["command"] = lambda x=c, y=r : select_move(x, y)
-        ###########################################################################
-        buttons_dict[COORDS_LIST[-1]].grid(row=r,column=c)
-
-
-def run():
-    main_text.place(x=536, y=0)
-    player_select.place(x=0, y=0)
-    catch_player.place(x=0, y=20)
-    window.mainloop()
-
+turn = 0
 
 while not game_over:
-    run()
-
-            
-       
+    # Ask for player 1 input
+    if turn == 0:
+        col = int(input("Player 1 Make your selection (0-6): "))
+        if iVL(board, col):
+            row = gEX(board, col)
+            drop_piece(board, row, col, 1)
+            if wM(board, 1):
+                print("Player 1 Wins")
+                game_over = True
+                break
+    # Ask for player 2 input
+    else:
+        col = int(input("Player 2 Make your selection (0-6): "))
+        if iVL(board, col):
+            row = gEX(board, col)
+            drop_piece(board, row, col, 2)
+            if wM(board, 2):
+                print("Player 2 Wins")
+                game_over = True
+                break
+    printB(board)
+    turn += 1
+    turn = turn % 2 
