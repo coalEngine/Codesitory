@@ -1,19 +1,25 @@
 import numpy as np
+import pygame as pg
 
-
+pg.init()
+screen = pg.display.set_mode(((800, 800)))
 ROWS, COLS = 6, 7
 
 def make_board():
+    # Creates an array of 0s which becomes the board
     board = np.zeros((ROWS,COLS))
     return board
 
 def drop_piece(board, row, col, piece):
+    # Drops the Piece in the selected row
     board[row][col] = piece
 
 def iVL(board, col):
+    # Gives the illusion of the piece dropping, into a row
     return board[ROWS-1][col] == 0
 
 def gEX(board, col):
+    # Checks if a certain square is empty and if it is, return the number row its on
     for r in range(ROWS):
         if board[r][col] == 0:
             return r
@@ -48,6 +54,11 @@ turn = 0
 
 while not game_over:
     # Ask for player 1 input
+    screen.fill((0, 0, 0))
+    pg.display.update()
+    for evt in pg.event.get():
+        if evt.type == pg.QUIT:
+            running = False
     if turn == 0:
         col = int(input("Player 1 Make your selection (0-6): "))
         if iVL(board, col):
