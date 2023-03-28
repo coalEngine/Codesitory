@@ -7,6 +7,7 @@ BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 BLUE = (0, 0, 255)
+GREEN = (0, 255, 0)
 
 def make_board():
     # Creates an array of 0s which becomes the board
@@ -51,6 +52,10 @@ def wM(board, piece):
         for r in range(3, ROWS):
              if board[r][c] == piece and board[r-1][c+1] == piece and board[r-2][c+2] == piece and board[r-3][c+3] == piece:
                 return True
+            
+def draw(board):
+     if 0 not in board:
+        return True
             
 def drawBoard(board):
     for c in range(COLS):
@@ -113,6 +118,10 @@ while not game_over:
                         label = myFont.render('Player 1 Wins!', 1, BLUE)
                         screen.blit(label, (110, 40))
                         game_over = True
+                    if draw(board):
+                        label = myFont.render('Draw!', 1, GREEN)
+                        screen.blit(label, (110, 40))
+                        game_over = True
                        
             # Ask for player 2 input
             else:
@@ -123,6 +132,10 @@ while not game_over:
                     drop_piece(board, row, col, 2)
                     if wM(board, 2):
                         label = myFont.render('Player 2 Wins!', 1, RED)
+                        screen.blit(label, (110, 40))
+                        game_over = True
+                    if draw(board):
+                        label = myFont.render('Draw!', 1, GREEN)
                         screen.blit(label, (110, 40))
                         game_over = True
             printB(board)
