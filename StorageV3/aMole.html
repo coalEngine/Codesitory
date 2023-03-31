@@ -1,0 +1,149 @@
+imgArray = new Array(4);
+imgArray[0] = new Image;
+imgArray[0].src = "Hole1.png";
+imgArray[1] = new Image; 
+imgArray[1].src = "Hole2.png";
+imgArray[2] = new Image;
+imgArray[2].src = "Hole3.png";
+imgArray[3] = new Image;
+imgArray[3].src = "Mole.png";
+
+imgArray2 = new Array(4);
+imgArray2[0] = new Image;
+imgArray2[0].src = "Hole1.png";
+imgArray2[1] = new Image; 
+imgArray2[1].src = "Hole2.png";
+imgArray2[2] = new Image;
+imgArray2[2].src = "Hole3.png";
+imgArray2[3] = new Image;
+imgArray2[3].src = "Mole.png";
+
+imgArray3 = new Array(4);
+imgArray3[0] = new Image;
+imgArray3[0].src = "Hole1.png";
+imgArray3[1] = new Image; 
+imgArray3[1].src = "Hole2.png";
+imgArray3[2] = new Image;
+imgArray3[2].src = "Hole3.png";
+imgArray3[3] = new Image;
+imgArray3[3].src = "Mole.png";
+
+imgArray4 = new Array(4);
+imgArray4[0] = new Image;
+imgArray4[0].src = "Hole1.png";
+imgArray4[1] = new Image; 
+imgArray4[1].src = "Hole2.png";
+imgArray4[2] = new Image;
+imgArray4[2].src = "Hole3.png";
+imgArray4[3] = new Image;
+imgArray4[3].src = "Mole.png";
+
+imgArray5 = new Array(4);
+imgArray5[0] = new Image;
+imgArray5[0].src = "Hole1.png";
+imgArray5[1] = new Image; 
+imgArray5[1].src = "Hole2.png";
+imgArray5[2] = new Image;
+imgArray5[2].src = "Hole3.png";
+imgArray5[3] = new Image;
+imgArray5[3].src = "Mole.png";
+
+imgArray6 = new Array(4);
+imgArray6[0] = new Image;
+imgArray6[0].src = "Hole1.png";
+imgArray6[1] = new Image; 
+imgArray6[1].src = "Hole2.png";
+imgArray6[2] = new Image;
+imgArray6[2].src = "Hole3.png";
+imgArray6[3] = new Image;
+imgArray6[3].src = "Mole.png";
+
+imgArray7 = new Array(4);
+imgArray7[0] = new Image;
+imgArray7[0].src = "Hole1.png";
+imgArray7[1] = new Image; 
+imgArray7[1].src = "Hole2.png";
+imgArray7[2] = new Image;
+imgArray7[2].src = "Hole3.png";
+imgArray7[3] = new Image;
+imgArray7[3].src = "Mole.png";
+
+imgArray8 = new Array(4);
+imgArray8[0] = new Image;
+imgArray8[0].src = "Hole1.png";
+imgArray8[1] = new Image; 
+imgArray8[1].src = "Hole2.png";
+imgArray8[2] = new Image;
+imgArray8[2].src = "Hole3.png";
+imgArray8[3] = new Image;
+imgArray8[3].src = "Mole.png";
+
+imgArray9 = new Array(4);
+imgArray9[0] = new Image;
+imgArray9[0].src = "Hole1.png";
+imgArray9[1] = new Image; 
+imgArray9[1].src = "Hole2.png";
+imgArray9[2] = new Image;
+imgArray9[2].src = "Hole3.png";
+imgArray9[3] = new Image;
+imgArray9[3].src = "Mole.png";
+
+index = 0; 
+indexTwo = 0;
+indexThree = 0; 
+indexFour = 0; 
+indexFive = 0; 
+indexSixth = 0; 
+indexSeven = 0; 
+indexEight = 0;
+indexNine = 0;
+var score = 0;
+
+function select()
+{
+	index = Math.floor(Math.random() * 4);
+	document.random_1.src = imgArray[index].src
+	document.random_2.src = imgArray2[index].src;
+	document.random_3.src = imgArray3[index].src;
+	document.random_4.src = imgArray4[index].src;
+	document.random_5.src = imgArray5[index].src;
+	document.random_6.src = imgArray6[index].src;
+	document.random_7.src = imgArray7[index].src;
+	document.random_8.src = imgArray8[index].src;
+	document.random_9.src = imgArray9[index].src;
+
+	setTimeout("select()", 2000);
+	return;
+} 
+
+
+function hit_or_miss()
+{
+	
+	if(index == 3)
+	{
+		score++;
+		document.form_1.game_score.value = score;
+		return;
+	}
+	else if (index != 3)
+	{
+		score--;
+		document.form_1.game_score.value = score;
+		return;
+	}
+
+	if(indexTwo == 3)
+	{
+		score++;
+		document.form_1.game_score.value = score;
+		return;
+	}
+	else if (indexTwo != 3)
+	{
+		score--;
+		document.form_1.game_score.value = score;
+		return;
+	}
+
+}

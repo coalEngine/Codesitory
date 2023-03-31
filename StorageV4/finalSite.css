@@ -1,0 +1,274 @@
+/* FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+/* Raleway sans-serif*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,100&display=swap');
+/* Roboto monospace*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@100.9,218&display=swap');
+/* Incosolata monospace*/
+
+
+
+
+
+
+
+
+.shameless-plug {
+    justify-content: left;
+
+}
+
+
+
+
+
+
+
+
+/* Base Button */
+
+
+header button {
+    padding: 8px 20px;
+    border-radius: 50px;
+}
+
+
+
+.btn {
+    background-color: var(--background-color);
+    color: #222;
+    border: none;
+    padding: .5em 1em;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+   
+    --background-color: #ffffff;
+    --border-size: 3px;
+    --accent-color: #0af;
+    --color: black;
+}
+
+
+
+
+
+
+
+
+
+
+/* Pop out Button  */
+
+.btn.btn-pop::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    z-index: -1;
+    border: var(--border-size) solid var(--color);
+    transition: top, left, right, bottom, 200ms ease-in-out;
+     
+}
+
+.btn.btn-pop:hover::before, 
+.btn.btn-pop:focus::before{
+    top: calc(var(--border-size) * -2);
+    left: calc(var(--border-size) * -2);
+    right:calc(var(--border-size) * -2);
+    bottom: calc(var(--border-size) * -2);
+}
+
+
+
+
+
+
+
+
+
+/* Slide Button */
+
+.btn.btn-slide::before{
+
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: black;
+
+    transition: transform 500ms ease-in-out;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.btn.btn-slide:hover::before,
+.btn.btn-slide:focus::before{
+    transform: scaleX(1);
+}
+
+.btn.btn-slide{
+
+    transition: color 500ms ease-in-out;
+    z-index:1;
+}
+
+.btn.btn-slide:hover,
+.btn.btn-slide:focus{
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+/* Circle Button */ 
+
+.btn.btn-circle::before{
+    content:"";
+    position: absolute;
+    text-align: relative;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index: -1;
+    background-color: var(--background-color);
+    border-radius: 50px;
+    transform-origin: center;
+    transition: transform 600ms ease-in-out;
+    
+
+    transform: scale(1.5);
+}
+
+.btn.btn-circle:hover::before,
+.btn.btn-circle:focus::before{
+    transform: scale(0);
+}
+
+.btn.btn-circle{
+    z-index: 1 ;
+    overflow: hidden;
+    background-color: black;
+    transition: color 600ms ease-in-out;
+}
+
+.btn.btn-circle:hover,
+.btn.btn-circle:focus{
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Underline */
+
+btn.btn-underline::before {
+    content:"";
+   
+    height: var(--border-size);
+    background-color: var(--accent-color);
+    transition: transform 300ms ease-in-out;
+
+    transform: scaleX(0);
+}
+
+
+.btn.btn-underline:hover::before,
+.btn.btn-underline:focus::before{
+    transform: scaleX(1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* The other buttons */
+
+li, a, button,text{
+    font-family: "Raleway", sans-serif;
+    font-weight: 300;
+    font-size: 2vh;
+    color: #edf0f1;
+    text-decoration: none;
+    display: flex;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border: none;
+    padding: 1vh 10%;
+    background-color: black;
+}
+
+
+.navL {
+    list-style: none;
+}
+
+.navL li {
+    display: inline-block;
+    padding: 0px 10px;
+}
+
+.navL li a {
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.navL li a:hover {
+    color: rgb(3, 150, 187);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* text editing */
+
+
+
+
+
+
+
+

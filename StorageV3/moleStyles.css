@@ -1,0 +1,24 @@
+img 
+{
+    border : 5px solid forestgreen ;
+    margin-left: auto;
+    margin-right: auto;
+}
+text
+{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border : 10px inset darkgoldenrod ;
+    width : 13% ; 
+    text-align : center ;
+    font-size: large;
+   
+}
+h3
+{
+    font: 1em sans-serif;
+}
+h1{
+    border : 10px outset darkgoldenrod ;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width : 12% ; 
+}

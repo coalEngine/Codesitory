@@ -1,0 +1,110 @@
+<!DOCTYPE HTML> 
+<html lang ="en">
+
+<head> 
+<meta charset ="UTF-8">
+<meta http-equiv="refresh" content = "1; url = 'timezones.html'"> 
+<title> Time Website </title> 
+<script>
+	var d=new Date();
+</script>
+</head>
+
+
+<body>
+<h1>San Francisco</h1>
+
+<h3>Hours</h3>
+<script>
+document.write(d.getHours() - 3)
+</script>
+<h3>Minutes</h3>
+<script>document.write(d.getMinutes())</script>
+<h3>Seconds</h3>
+<script>document.write(d.getSeconds())</script>
+
+<h1>Chicago</h1>
+
+<h3>Hours</h3>
+
+<script>
+document.write(d.getHours() - 13)		
+</script>
+<h3>Minutes</h3>
+<script>document.write(d.getMinutes())</script>
+<h3>Seconds</h3>
+<script>document.write(d.getSeconds())</script>
+
+<h1>New York</h1>
+
+<h3>Hours</h3>
+<script>
+	if(d.getHours() > 12)
+	{
+		document.write(d.getHours() - 12)
+	}else{
+
+	document.write(d.getHours())
+	}
+</script>
+<h3>Minutes</h3>
+<script>document.write(d.getMinutes())</script>
+<h3>Seconds</h3>
+<script>document.write(d.getSeconds())</script>
+
+<h1>London</h1>
+
+<h3>Hours</h3>
+<script>
+if(d.getHours() >= 12)
+	{
+		document.write(d.getHours() - 12 + 5)
+	}
+</script>
+<h3>Minutes</h3>
+<script>document.write(d.getMinutes())</script>
+<h3>Seconds</h3>
+<script>document.write(d.getSeconds())</script>
+
+<h1>Moscow</h1>
+
+<h3>Hours</h3>
+<script>
+if(d.getHours() >= 12)
+	{
+		document.write(d.getHours() - 12 + 8)
+	}
+</script>
+<h3>Minutes</h3>
+<script>document.write(d.getMinutes())</script>
+<h3>Seconds</h3>
+<script>document.write(d.getSeconds())</script>
+
+<h1>Hong Kong</h1>
+
+<h3>Hours</h3>
+<script>
+		document.write(d.getHours() + 12 - 23)
+</script>
+<h3>Minutes</h3>
+<script>document.write(d.getMinutes())</script>
+<h3>Seconds</h3>
+<script>document.write(d.getSeconds())</script>
+
+<h1>Tokyo</h1>
+
+<h3>Hours</h3>
+<script>
+if(d.getHours() >= 12)
+	{
+		document.write(d.getHours() + 13 - 23)
+	}
+</script>
+<h3>Minutes</h3>
+<script>document.write(d.getMinutes())</script>
+<h3>Seconds</h3>
+<script>document.write(d.getSeconds())</script>
+</body>
+
+
+</html> 

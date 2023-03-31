@@ -1,0 +1,88 @@
+<!DOCTYPE HTML> 
+<html lang ="en">
+
+<head> 
+<meta charset ="UTF-8">
+<title>  McDonalds Webpage  </title> 
+<script src = "macdonal3.js"></script>
+<style>
+    h1 {
+        color: white;
+        background-color: rgb(172, 201, 91);
+        justify-content: center; 
+        align-items: center;
+        text-align: center;
+        border:rgb(172, 201, 91) 20px solid;
+        border-radius: 50px;
+    }
+    *{
+        background-color: rgb(255, 255, 255);
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+        input 
+        {
+        margin: 10px;
+        padding: 1em;
+        align-items: center;
+        text-align: center;
+       }
+       .d{
+           box-shadow: 5px 8px 5px hsla(0, 0%, 26%, 0.562);
+           border-radius: 50px;
+           border: 10px solid rgba(0, 0, 0, 0.082);
+           cursor: pointer;
+       }
+       .c{
+           box-shadow: 5px 8px 5px hsla(0, 0%, 26%, 0.541);
+           border-radius: 50px;
+           border: 10px solid rgba(0, 0, 0, 0.089);
+       }
+       .b{
+           box-shadow: 5px 8px 5px hsla(0, 0%, 26%, 0.589);
+           border-radius: 50px;
+           border: 10px solid rgba(0, 0, 0, 0.089);
+       }
+</style>
+</head>
+
+
+<body>
+<form name = "form">
+
+    <h1> Dollar Menu & More</h1>
+    <br>
+    <br>
+    <input type = "text" maxlength="2" size = "3" name = "Q1" class = "c"> <input type = "checkbox" name = "D1" value = "grilled"> Grilled Onion Chedder Burger: $1.00<br> <br> 
+    <input type = "text" maxlength="2" size = "3" name = "Q2" class = "c"> <input type = "checkbox" name = "D2" value = "mcdouble"> McDouble: &emsp; $1.39<br> <br>
+    <input type = "text" maxlength="2" size = "3" name = "Q3" class = "c"> <input type = "checkbox" name = "D3" value = "McChicken"> McChicken:  $1.00<br> <br>
+    <input type = "text" maxlength="2" size = "3" name = "Q4" class = "c"> <input type = "checkbox" name = "D4" value = "BBQ"> BBQ Ranch Burger:s  $1.00<br> <br>
+    <input type = "text" maxlength="2" size = "3" name = "Q5" class = "c"> <input type = "checkbox" name = "D5" value = "doubcheese"> Double Cheeseburger:   $2.29<br> <br>
+    <input type = "text" maxlength="2" size = "3" name = "Q6" class = "c"> <input type = "checkbox" name = "D6" value = "daily"> Daily Double:   $1.99<br> <br>
+    <input type = "text" maxlength="2" size = "3" name = "Q7" class = "c"> <input type = "checkbox" name = "D7" value = "Jalapeno Doub"> Jalaepe&ntilde;o Double:   $2.00<br> <br>
+    <input type = "text" maxlength="2" size = "3" name = "Q8" class = "c"> <input type = "checkbox" name = "D8" value = "bacon doub"> Bacon McDouble:   $2.00<br> <br>
+    <input type = "text" maxlength="2" size = "3" name = "Q9" class = "c"> <input type = "checkbox" name = "D9" value = "4 piece"> 4 Pc. Chicken McNuggets:   $1.99<br> <br>
+    <input type = "text" maxlength="2" size = "3" name = "Q10" class = "c"> <input type = "checkbox" name = "D10" value = "20 piece"> 20 Pc. Chicken McNuggets:   $5.00<br> <br>
+    <input type = "text" maxlength="2" size = "3" name = "Q11" class = "c"> <input type = "checkbox" name = "D11" value = "20 piece + meal"> 20 Pc. Chicken McNuggets - Meal (2 Medium Fries & 2 Drinks):   $9.99<br> <br>
+    <input type = "text" maxlength="2" size = "3" name = "Q12" class = "c"> <input type = "checkbox" name = "D12" value = "par"> Parfait:   $1.00<br> <br>
+    <input type = "text" maxlength="2" size = "3" name = "Q13" class = "c"> <input type = "checkbox" name = "D13" value = "salad"> Side Salad:   $1.59<br> <br>
+    <input type = "text" maxlength="2" size = "3" name = "Q14" class = "c"> <input type = "checkbox" name = "D14" value = "cookies"> 3 Cookies:   $1.00<br> <br>
+    <input type = "text" maxlength="2" size = "3" name = "Q15" class = "c"> <input type = "checkbox" name = "D15" value = "cone"> Cone:   $1.00<br> <br>
+    <input type = "text" maxlength="2" size = "3" name = "Q16" class = "c"> <input type = "checkbox" name = "D16" value = "apple slices"> Apple Slices:   &emsp; (2 Bags) &nbsp; $1.00<br> <br> <br> <br> <br>
+
+
+<p>
+    <input type = "button" value = "Order" onClick = "order()" class = "d">
+</p>
+<p>
+    Quantity <input type = "text" name = "Q" value = "0" class = "c" maxlength = "3">
+</p>
+<p>
+    Total <input type = "text" name = "T" value = "0" class = "b">
+</p>
+
+
+</form>
+</body>
+
+
+</html> 

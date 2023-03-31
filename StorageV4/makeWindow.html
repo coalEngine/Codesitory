@@ -1,0 +1,37 @@
+<!DOCTYPE HTML> 
+<html lang ="en">
+
+<head> 
+<meta charset ="UTF-8">
+<title> Window Opener and Closer </title> 
+<script>
+        var newWindow;
+        function makeWindow()
+        {
+            newWindow = window.open("quads.html", "Quadratic Webpage", "height = 300, width = 300, left = 200, top = 200");
+        }
+
+        function closeNewWindow()
+        {
+            if(newWindow)
+            {
+                newWindow.close(); 
+            }
+        }
+</script>
+</head>
+
+
+<body>
+
+<form>
+    <input type = "button" value = "Create New Window" onClick = "makeWindow()">
+    <br>
+    <br>
+    <input type = "button" value = "Close Window" onClick = "closeNewWindow()">
+</form>
+
+</body>
+
+
+</html> 

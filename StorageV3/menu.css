@@ -1,0 +1,46 @@
+
+h2
+{
+  border: 10px outset peru;
+  font-style : italic ; 
+  font-family : "Serif", Garamond;
+  width:270px;
+  padding:5px;
+  text-align: center;
+  font-size : 29px;
+} 
+
+h3 
+{
+ font-style : italic ; 
+ font-family : "Monospace", Monaco;
+} 
+
+
+img 
+{
+	border: 17px solid Sienna;
+	opacity:0.9;
+}
+
+a 
+{
+ font-style:italic; 
+ font-style:bold;
+ font-size:15px;
+}
+
+h6
+{
+	font-family: "Serif", Georgia;
+}
+li
+{
+	font-size:16px;
+
+}
+h4
+{
+	font-size:19px;
+}
+

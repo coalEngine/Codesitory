@@ -1,0 +1,9 @@
+h1
+{
+	color : red ;
+	background : orange ;
+	border : 10px dashed blue ;
+	padding : 5px ;
+	width : 550px ;
+	float : left ;
+}

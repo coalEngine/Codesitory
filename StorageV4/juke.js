@@ -1,0 +1,1 @@
+alert("Place a MP3 file inside the Jukebox");
