@@ -1,4 +1,5 @@
 import pygame
+from Button import Button
 pygame.init()
 
 WIDTH, HEIGHT = 1280, 720
