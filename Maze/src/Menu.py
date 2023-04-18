@@ -13,4 +13,4 @@ class Menu:
          screen.blit(menu_text, menu_text_rect)
          clock.tick(60)
          if play_button.draw(screen):
-            pass
+            print("Play State: Activated")
