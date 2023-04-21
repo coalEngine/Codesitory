@@ -41,7 +41,8 @@ class Level:
             self.world_shift = 0
             player.speed = 6
         
-        
+    def scroll_y(self):
+        pass
         
     def horizontal_movement_check(self):
         player = self.player.sprite
@@ -73,6 +74,7 @@ class Level:
         self.tiles.update(self.world_shift)
         self.tiles.draw(self.display_surface)
         self.scroll_x()
+        self.scroll_y()
         
         # Player
         self.player.update()

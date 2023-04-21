@@ -20,8 +20,6 @@ def play_state():
     
     while True:
         PLAY_MOUSE_POS = pygame.mouse.get_pos()
-        
-        fps = "FPS:", str(clock.get_fps())
         fps_text = get_and_set_font(10).render("FPS: {}".format(str(round(clock.get_fps()))), True, WHITE, BLACK)
         fps_text_rect = fps_text.get_rect()
         fps_text_rect.center = (36, 16)
