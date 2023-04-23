@@ -8,7 +8,8 @@ class Level:
         self.display_surface = surface
         self.setup(level_data)
         
-        self.world_shift = 0
+        self.world_shift_x = 0
+        self.world_shift_y = 0
     
     
     def setup(self, layout):
@@ -32,16 +33,26 @@ class Level:
         level_border = 0
         
         if player_x < ((WIDTH / 2) - 140) and dir_x < 0:
-            self.world_shift = 6
+            self.world_shift_x = 6
             player.speed = 0
         elif player_x > ((WIDTH / 2) + 140) and dir_x > 0: 
-            self.world_shift = -6
+            self.world_shift_x = -6
             player.speed = 0
         else: 
-            self.world_shift = 0
+            self.world_shift_x = 0
             player.speed = 6
         
+    def scroll_y(self):
+        player = self.player.sprite
+        player_y = player.rect.centery
+        dir_y = player.dir.y
         
+        if player_y < ((HEIGHT / 2)) and dir_y < 0:
+            self.world_shift_y = 6
+        elif player_y > ((HEIGHT / 2)) and dir_y > 0:
+            self.world_shift_y = -6
+        else:
+            self.world_shift_y = 0
         
     def horizontal_movement_check(self):
         player = self.player.sprite
@@ -67,13 +78,12 @@ class Level:
                     player.rect.top = sprite.rect.bottom
                     player.dir.y = 0
                     
-                    
     def init(self):
         
-        self.tiles.update(self.world_shift)
+        self.tiles.update(self.world_shift_x, self.world_shift_y)
         self.tiles.draw(self.display_surface)
         self.scroll_x()
-        
+        self.scroll_y()
         # Player
         self.player.update()
         self.horizontal_movement_check()

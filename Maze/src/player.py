@@ -10,13 +10,12 @@ class Player(pygame.sprite.Sprite):
         self.dir = pygame.math.Vector2(0,0)
         
         # Player Stats
-        self.speed = 6
+        self.speed = 6 
         self.gravity = 0.7
         self.jump_speed = -14
         
     def get_input(self):
         keys = pygame.key.get_pressed()
-        
         
         if keys[pygame.K_d]:
             self.dir.x = 1
