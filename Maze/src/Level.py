@@ -53,7 +53,7 @@ class Level:
             self.world_shift_y = -6
         else:
             self.world_shift_y = 0
-        
+            
     def horizontal_movement_check(self):
         player = self.player.sprite
         player.rect.x += player.dir.x * player.speed
