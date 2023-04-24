@@ -30,7 +30,6 @@ class Level:
         player = self.player.sprite
         player_x = player.rect.centerx
         dir_x = player.dir.x
-        level_border = 0
         
         if player_x < ((WIDTH / 2) - 140) and dir_x < 0:
             self.world_shift_x = 6
@@ -83,7 +82,6 @@ class Level:
         self.tiles.update(self.world_shift_x, self.world_shift_y)
         self.tiles.draw(self.display_surface)
         self.scroll_x()
-        self.scroll_y()
         # Player
         self.player.update()
         self.horizontal_movement_check()

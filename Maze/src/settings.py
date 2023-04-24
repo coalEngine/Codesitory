@@ -3,18 +3,18 @@ from Button import Button
 pygame.init()
 
 world_1_level1 = [
-'                                                ',
-'                                                ',
-'                                                ',
-'                                                ',
-'                                                ',
-'                                                ',
-'                                                ',
-'X                                               ',
-'XXX                                             ',
-'           XXXX    XXXX             XX          ',
-' P  XXXXX    XX    XX               XX          ',
-'XXXXXXXXX    XX    XXXXXXXXXXXXXXXXXXX          ',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX          ',
+'X                                                                                                                                                        XX          ',
+'XXXXXX                                                                                                                                                   XX          ',
+'      XX                            XXX       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX    XXXX                                                        XX          ',
+'       XX                       XX                                                      X                                                  XXXX          XX          ',
+'XXXXXXXXXXXXXXXXXXXXXXX       XX                                 XXXXXXXXXXXXXXXXXXXXXXXX                                           XX          XXXX     XX          ',
+'X                                                                                                XXXXXX   XXXX  XX    XXX   XXX    X              XX     XX          ',
+'X                        XX                                      XXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                    XXX    XX          ',
+'XXX                           X                  XXXXXXXXXXXXXXXX         X                  XX                                                   XX     XX          ',
+'X           XXXX    XXXX     XXX     XX                           XXXXXXXXX                   XX                                                  XX    XXX          ',
+'X P  XXXXX    XX    XX        X       XX         XXXXXXXXXXXXXXXXXX                             XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                ',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                                                                XXXXXXXXXXXXXXXX ',
 ]
 
 tile_size = 64

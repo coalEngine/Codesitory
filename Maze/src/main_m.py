@@ -17,6 +17,7 @@ def credits_state():
 def play_state():
     pygame.display.set_caption("Maze.Play.State")
     level = Level(world_1_level1, screen)
+    print(world_1_level1)
     
     while True:
         PLAY_MOUSE_POS = pygame.mouse.get_pos()
