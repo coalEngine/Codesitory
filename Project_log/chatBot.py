@@ -1,29 +1,16 @@
-question_1 = input("What is your name? ")
-print("Hello " + question_1)
+import requests
 
+url = "https://random-stuff-api.p.rapidapi.com/ai/response"
 
-question_2 = input("How is your day today?: ")
-if question_2 == 'Bad':
-    print("I'm sorry to hear that")
-elif question_2 == 'Good':
-    print("Great!")
+querystring = {"message":"Hi there, Tell me a joke!","user_id":"420"}
 
+headers = {
+	"content-type": "application/octet-stream",
+	"Authorization": "q9Oh7Lg7J0Hd",
+	"X-RapidAPI-Key": "f9cf5023b1msh6d7ad8eddd16e56p1252b6jsnb0c7ea851f2c",
+	"X-RapidAPI-Host": "random-stuff-api.p.rapidapi.com"
+}
 
-question_3 = input("What is your favorite food?: ")
-print("I like " + question_3 + " too!")
+response = requests.get(url, headers=headers, params=querystring)
 
-
-question_4 = input("What is your favorite drink?: ")
-print("I haven't tried " + question_4 + " yet but it sounds nice")
-
-question_5 = input("What programming language am i coded in?: ")
-if question_5 == "Python":
-    print("Correct!")
-else:
-    print("Not quite!")
-
-question_6 = int(input("How old is Python? (Years): "))
-if question_6 == 31:
-    print("That's right!")
-else: 
-    print("Nope")
+print(response.json())
