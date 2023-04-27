@@ -48,10 +48,9 @@ class Level:
         
         if player_y < ((HEIGHT / 2)) and dir_y < 0:
             self.world_shift_y = 6
-        elif player_y > ((HEIGHT / 2)) and dir_y > 0:
-            self.world_shift_y = -6
         else:
             self.world_shift_y = 0
+        
             
     def horizontal_movement_check(self):
         player = self.player.sprite
@@ -82,6 +81,7 @@ class Level:
         self.tiles.update(self.world_shift_x, self.world_shift_y)
         self.tiles.draw(self.display_surface)
         self.scroll_x()
+        self.scroll_y()
         # Player
         self.player.update()
         self.horizontal_movement_check()

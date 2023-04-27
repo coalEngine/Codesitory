@@ -7,7 +7,7 @@ world_1_level1 = [
 'X                                                                                                                                                        XX          ',
 'XXXXXX                                                                                                                                                   XX          ',
 '      XX                            XXX   XX  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX    XXXX                                                        XX          ',
-'       XX                       XX                                                      X                                                  XXXX          XX          ',
+'       XX                       XX       X                                              X                                                  XXXX          XX          ',
 'XXXXXXXXXXXXXXXXXXXXXXX       XX                                 XXXXXXXXXXXXXXXXXXXXXXXX                                           XX    X     XXXX     XX          ',
 'X                                                                                                XXXXXX   XXXX  XX    XXX   XXX    X              XX     XX          ',
 'X                        XX                                      XXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                    XXX    XX          ',
