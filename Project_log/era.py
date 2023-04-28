@@ -12,4 +12,4 @@ if ERA > 4 and ERA <= 5:
 if ERA > 5 and ERA <= 6 :
     print(ERA, ": Worse than average")
 if ERA > 6:
-    print(ERA, ": Consistently having this ERA this high risks demotion to the bulletpen, or lower league")
+    print(ERA, ": Consistently having this ERA risks high risks demotion to the bulletpen, or lower league")
