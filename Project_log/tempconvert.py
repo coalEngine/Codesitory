@@ -14,7 +14,7 @@ def convert(choice, choice2):
              print("Fahrenheit: ", (1.8 * C) + 32)
          if choice2 == 'K':
              print("Kelvin: ", C + 273.2)
-    if choice == 'R'
+    if choice == 'R':
 def intro():
     choice = input("What do you want to convert?: ")
     choice2 = input("To?: ")
