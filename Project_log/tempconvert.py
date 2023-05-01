@@ -15,6 +15,7 @@ def convert(choice, choice2):
          if choice2 == 'K':
              print("Kelvin: ", C + 273.2)
     if choice == 'R':
+        pass
 def intro():
     choice = input("What do you want to convert?: ")
     choice2 = input("To?: ")
