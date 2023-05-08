@@ -9,14 +9,44 @@ for _ in range(1):
     userPiece1 = int(input("Guess the second number: "))
     userPiece2 = int(input("Guess the third number: "))
 
-
-if piece3 == userPiece2:
-    print("Piece 3 is correct")
-if piece2 == userPiece1:
-    print("Piece 2 is correct")
+gotOnePiece = False
 if piece1 == userPiece:
     print("Piece 1 is correct")
-elif piece1 == userPiece and piece2 == userPiece1 and piece3 == userPiece2:
-    print("You won!")
+    gotOnePiece = True
+elif piece1 == userPiece1:
+    print("Piece 1 is correct")
+    gotOnePiece = True
+elif piece1 == userPiece2:
+    print("Piece 1 is correct")
+    gotOnePiece = True
+else:
+    print("Piece 1 is wrong")
+
+if piece2 == userPiece:
+    print("Piece 2 is correct")
+    gotOnePiece = True
+elif piece2 == userPiece1:
+    print("Piece 2 is correct")
+    gotOnePiece = True
+elif piece2 == userPiece2:
+    print("Piece 2 is correct")
+    gotOnePiece = True
+else: 
+    print("Piece 2 is wrong")
+
+if piece3 == userPiece:
+    print("Piece 3 is correct")
+    gotOnePiece = True
+elif piece3 == userPiece1:
+    print("Piece 3 is correct")
+    gotOnePiece = True
+elif piece3 == userPiece2:
+    print("Piece 3 is correct")
+    gotOnePiece = True
+else:
+    print("Piece 3 is wrong")
+
+if gotOnePiece == True:
+    print("You Won!")
 else:
     print("You lose!")
