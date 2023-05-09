@@ -25,7 +25,7 @@ class Level:
                 if col == 'P':
                     player_sprite = Player((x, y))
                     self.player.add(player_sprite)
-                    
+    '''''              
     def scroll_x(self):
         player = self.player.sprite
         player_x = player.rect.centerx
@@ -50,11 +50,10 @@ class Level:
             self.world_shift_y = 6
         else:
             self.world_shift_y = 0
-        
+     '''''   
             
     def horizontal_movement_check(self):
         player = self.player.sprite
-        player.rect.x += player.dir.x * player.speed
         
         for sprite in self.tiles.sprites():
             if sprite.rect.colliderect(player.rect):
@@ -65,7 +64,6 @@ class Level:
                     
     def vertical_movement_check(self):
         player = self.player.sprite
-        player.apply_gravity()
         
         for sprite in self.tiles.sprites():
             if sprite.rect.colliderect(player.rect):
@@ -80,8 +78,6 @@ class Level:
         
         self.tiles.update(self.world_shift_x, self.world_shift_y)
         self.tiles.draw(self.display_surface)
-        self.scroll_x()
-        self.scroll_y()
         # Player
         self.player.update()
         self.horizontal_movement_check()
