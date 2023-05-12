@@ -8,9 +8,8 @@ def reduceFraction(x, y) :
     x = x // d;
     y = y // d;
     count = 0
-    if x > y:
+    while x > y:
        count+=1
-       print(count)
     else:
         print(f"{x}/{y}")
 
