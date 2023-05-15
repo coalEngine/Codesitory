@@ -27,7 +27,13 @@ def convert(choice, choice2):
         if choice2 == 'C':
             print("Celsius: ", (R / (9/5)) - 491.67)
     if choice == 'K':
-         R = float(input("Please input the Rankine: "))
+         K = float(input("Please input the Kelvin: "))
+         if choice2 == 'C':
+             print("Celsius: ", K - 273.15)
+         if choice2 == 'R':
+             print("Rankine: ", K * (9/5))
+         if choice2 == 'F':
+             print("Fahrenheit: ", (K * (9/5)) - 459.67)
          
 def intro():
     choice = input("What do you want to convert?: ")
