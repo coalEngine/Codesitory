@@ -1,17 +1,19 @@
 import nltk
 from nltk.tokenize import word_tokenize
 
-# Preprocessing
-def preprocess(text):
-    # Tokenize the text
-    tokens = word_tokenize(text.lower())
-    # Add any other preprocessing steps if needed
-    return tokens
-
 # Define predefined responses
 responses = {
     "hello": "Hello!",
-    "how are you": "I'm good, thank you!",
+    "how are you?": "I'm good, thank you!",
+    "bye": "Bye! Bye!",
+    "how is your day?": "My day is going fine thank you",
+    "Do you like video games?": "I love video games",
+    "Have you heard of Minecraft?": "Yes i love that game!",
+    "What programming language are you made in?": "100% Python",
+    "What is the best search engine?": "Opera GX is very good, but i'd recommend firefox",
+    "Do you hate AI?": "No i am an AI myself", 
+    "Do you like AI?": "Of Course",
+    "What is the best programming language?": "Python in my opnion",
     "default": "Sorry, I didn't understand. Can you please rephrase?"
 
 }
@@ -19,20 +21,18 @@ responses = {
 # Chatbot logic
 def chatbot(user_input):
     # Preprocess user input
-    tokens = preprocess(user_input)
-    
+    token = user_input
     # Check for predefined responses
-    for token in tokens:
-        if token in responses:
-            return responses[token]
-    
+    if token in responses:
+        return responses[token]
+            
     # If no predefined response matches, return default response
     return responses["default"]
 
 # Main loop
 while True:
     user_input = input("User: ")
-    if user_input == "i want to leave":
-        break
     response = chatbot(user_input)
     print("Chatbot: " + response)
+    if user_input == "bye":
+        break
